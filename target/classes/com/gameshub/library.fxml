@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane maxHeight="400" maxWidth="600" minHeight="400" minWidth="600" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcWidth="5.0" fill="#5298da" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="168.0" />
+      <Button id="settingsButton" layoutX="30.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Settings" />
+      <Button id="profileButton" layoutX="30.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Profile" />
+      <Circle id="profileAvatar" fill="WHITE" layoutX="86.0" layoutY="91.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <Button id="libraryButton" layoutX="30.0" layoutY="188.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Library" textFill="#1b2936" />
+      <Button id="logoutButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Logout" />
+      <Rectangle id="minesweeperGame" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="120.0" layoutX="187.0" layoutY="33.0" stroke="BLACK" strokeType="INSIDE" width="190.0" />
+      <Rectangle id="battleshipGame" arcHeight="5.0" arcWidth="5.0" fill="#23ff1f" height="120.0" layoutX="395.0" layoutY="33.0" stroke="BLACK" strokeType="INSIDE" width="190.0" />
+      <Rectangle id="ChessGame" arcHeight="5.0" arcWidth="5.0" fill="#e7ff1f" height="120.0" layoutX="187.0" layoutY="190.0" stroke="BLACK" strokeType="INSIDE" width="190.0" />
+      <Rectangle id="HangmanGame" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="120.0" layoutX="395.0" layoutY="190.0" stroke="BLACK" strokeType="INSIDE" width="190.0" />
+      <Label layoutX="248.0" layoutY="83.0" text="Minesweeper" />
+      <Label layoutX="466.0" layoutY="84.0" text="Battleship" />
+      <Label layoutX="266.0" layoutY="241.0" text="Chess" />
+      <Label layoutX="463.0" layoutY="241.0" text="Hangman" />
+   </children>
+</AnchorPane>
