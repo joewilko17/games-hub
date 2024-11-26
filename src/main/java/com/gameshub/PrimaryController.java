@@ -1,48 +1,29 @@
 package com.gameshub;
 
-import java.io.IOException;
+//import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
+//import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+//import javafx.scene.Parent;
+//import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
+//import javafx.stage.Modality;
+//import javafx.stage.Stage;
 
-public class PrimaryController {
-
-    @FXML
-    private void switchToProfile() throws IOException {
-        App.setRoot("profile");
-    }
-
-    @FXML
-    private void switchToSettings() throws IOException {
-        App.setRoot("settings");
-    }
+public class PrimaryController implements Initializable {
 
     @FXML
-    private void switchToLibrary() throws IOException {
-        App.setRoot("library");
-    }
+    private Circle profileImage;
 
-    @FXML
-    private void showLogoutScene() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/logout.fxml"));
-            Parent root = loader.load();
-
-            Stage logoutStage = new Stage();
-            logoutStage.initModality(Modality.APPLICATION_MODAL);
-            logoutStage.setTitle("Confirm Logout");
-
-            Scene scene = new Scene(root);
-            logoutStage.setScene(scene);
-            logoutStage.showAndWait();
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("failed to load the logout.fmxl file");
-        }
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        Image img = new Image(getClass().getResource("/com/gameshub/images/sample.jpg").toExternalForm());
+        profileImage.setFill(new ImagePattern(img));
     }
 
 }
