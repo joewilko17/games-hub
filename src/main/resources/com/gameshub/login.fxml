@@ -44,7 +44,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="352.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="352.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gameshub.controller.LoginController">
    <children>
       <BorderPane prefHeight="420.0" prefWidth="352.0">
          <top>
@@ -77,6 +77,11 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </ImageView>
+                  <Label fx:id="validationLabel" text="Validation Text Here" textFill="RED" visible="false">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Label>
                   <Label text="Username" textFill="WHITE">
                      <VBox.margin>
                         <Insets right="105.0" />
