@@ -1,5 +1,7 @@
 package com.gameshub.controller;
 
+import com.gameshub.model.Profile;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -23,5 +25,11 @@ public class LibraryController extends NavigationController {
         libraryButton.setOnAction(event -> goToLibrary(event));
         settingsButton.setOnAction(event -> goToSettings(event));
         logoutButton.setOnAction(event -> openLogout());
+    }
+
+    // Method to update active profile elements
+    public void updateActiveProfileElements() {
+        Profile activeProfile = profileManager.getActiveProfile();
+        System.out.println(activeProfile);
     }
 }

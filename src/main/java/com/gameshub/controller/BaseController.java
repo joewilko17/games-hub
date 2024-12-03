@@ -1,5 +1,7 @@
 package com.gameshub.controller;
 
+import com.gameshub.model.ProfileManager;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,6 +13,16 @@ public abstract class BaseController {
     protected static Stage logoutStage;
     protected static Stage loginStage;
 
+    protected ProfileManager profileManager;
+
+
+    public BaseController() {
+        this.profileManager = ProfileManager.getInstance();
+    }
+
+    // Method to update any controller with profile data
+    public abstract void updateActiveProfileElements();
+    
     // Initialize stages within main.java
     public static void initializeStages(Stage login, Stage main, Stage logout) {
         loginStage = login;
@@ -18,14 +30,14 @@ public abstract class BaseController {
         logoutStage = logout;
     }
 
-    // Exit button logic
+    // Method to handle exiting a given stage
     public void handleExit(Stage stage) {
         if (stage != null) {
             stage.close();
         }
     }
 
-    // Handle exiting of all existing stages
+    // Method to handle exiting of all existing stages
     public void handleExitAll() {
 
         // Close the logoutStage if it exists
@@ -43,6 +55,7 @@ public abstract class BaseController {
 
     }
 
+    // Method to reset the login stage back to the login scene (instead of showing create profile, if selected)
     public void resetLogin() throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/gameshub/login.fxml"));
         Parent root = loader.load();

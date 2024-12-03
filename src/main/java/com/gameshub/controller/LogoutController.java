@@ -37,4 +37,9 @@ public class LogoutController extends NavigationController {
         });
         cancelButton.setOnAction(event -> handleCancel(logoutStage));
     }
+
+     // Currently no elements to update
+     public void updateActiveProfileElements() {
+        System.out.println("This LogoutController does not currently update any active profile FXML elements");
+    }
 }
