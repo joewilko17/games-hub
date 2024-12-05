@@ -4,9 +4,14 @@ import com.gameshub.model.Profile;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
 public class SettingsController extends NavigationController {
 
+    @FXML
+    private Circle profileImage;
     @FXML
     private Button exitButton;
     @FXML
@@ -31,5 +36,7 @@ public class SettingsController extends NavigationController {
     public void updateActiveProfileElements() {
         Profile activeProfile = profileManager.getActiveProfile();
         System.out.println(activeProfile);
+        Image img = new Image(getClass().getResource("/com/gameshub/images/sample.jpg").toExternalForm());
+        profileImage.setFill(new ImagePattern(img));
     }
 }

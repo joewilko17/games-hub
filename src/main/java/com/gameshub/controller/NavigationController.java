@@ -1,61 +1,34 @@
 package com.gameshub.controller;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public abstract class NavigationController extends BaseController {
 
     // Navigate to profile
     public void goToProfile(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        try {
-            switchScene("/com/gameshub/profile.fxml", stage);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        navigateToScene("profile", event);
     }
 
     // Navigate to library
     public void goToLibrary(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        try {
-            switchScene("/com/gameshub/library.fxml", stage);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        navigateToScene("library", event);
     }
 
     // Navigate to settings
     public void goToSettings(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        try {
-            switchScene("/com/gameshub/settings.fxml", stage);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        navigateToScene("settings", event);
     }
 
     // Navigate to create profile
     public void goToCreateProfile(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        try {
-            switchScene("/com/gameshub/createprofile.fxml", stage);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        navigateToScene("createProfile", event);
     }
 
+    // Navigate to login
     public void goToLogin(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        try {
-            switchScene("/com/gameshub/login.fxml", stage);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        navigateToScene("login", event);
     }
 
     // Navigate to logout in new window
@@ -73,15 +46,10 @@ public abstract class NavigationController extends BaseController {
         openStage(mainStage);
     }
 
-    // Method to open switch the current scene
-    private void switchScene(String fxmlFile, Stage stage) {
+    private void navigateToScene(String sceneKey, ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-            Parent root = loader.load();
-            Scene newScene = new Scene(root);
-            stage.setScene(newScene);
-            stage.show();
-
+            sceneManager.switchScene(sceneKey, stage);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -90,6 +58,10 @@ public abstract class NavigationController extends BaseController {
     // Method to open a new window
     private void openStage(Stage stage) {
         try {
+            stage.setOnShown(event -> {
+                BaseController.triggerUpdateActiveProfileElements();
+            });
+
             stage.show();
 
         } catch (Exception e) {

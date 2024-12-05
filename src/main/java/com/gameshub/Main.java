@@ -1,5 +1,6 @@
 package com.gameshub;
 
+
 import com.gameshub.controller.BaseController;
 
 import javafx.application.Application;
@@ -9,12 +10,19 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Main extends Application {
+    
+    private static Stage mainStage;
+    private static Stage loginStage;
+    private static Stage logoutStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Stage loginStage = new Stage();
-        Stage logoutStage = new Stage();
-        Stage mainStage = new Stage();
+
+        mainStage = new Stage();
+        loginStage = new Stage();
+        logoutStage = new Stage();
+        
+        mainStage = primaryStage;
 
         // Load scenes for each stage using FXML
         FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("login.fxml"));
@@ -34,6 +42,7 @@ public class Main extends Application {
 
         BaseController.initializeStages(loginStage, mainStage, logoutStage);
 
+    
         loginStage.show();
     }
 

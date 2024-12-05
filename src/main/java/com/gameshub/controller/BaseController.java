@@ -1,6 +1,11 @@
 package com.gameshub.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.gameshub.model.AuthenticationManager;
 import com.gameshub.model.ProfileManager;
+import com.gameshub.model.SceneManager;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,19 +14,31 @@ import javafx.stage.Stage;
 
 public abstract class BaseController {
 
+    private static final List<BaseController> registeredControllers = new ArrayList<>();
+
     protected static Stage mainStage;
     protected static Stage logoutStage;
     protected static Stage loginStage;
 
     protected ProfileManager profileManager;
-
+    protected SceneManager sceneManager;
+    protected AuthenticationManager authenticationManager;
 
     public BaseController() {
         this.profileManager = ProfileManager.getInstance();
+        this.authenticationManager = AuthenticationManager.getInstance();
+        this.sceneManager = SceneManager.getInstance();
+        registeredControllers.add(this);
     }
 
     // Method to update any controller with profile data
     public abstract void updateActiveProfileElements();
+
+    public static void triggerUpdateActiveProfileElements() {
+        for (BaseController controller : registeredControllers) {
+            controller.updateActiveProfileElements();
+        }
+    }
     
     // Initialize stages within main.java
     public static void initializeStages(Stage login, Stage main, Stage logout) {

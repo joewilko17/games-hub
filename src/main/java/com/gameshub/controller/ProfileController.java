@@ -4,6 +4,7 @@ import com.gameshub.model.Profile;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -22,6 +23,9 @@ public class ProfileController extends NavigationController {
     private Button settingsButton;
     @FXML
     private Button logoutButton;
+    @FXML 
+    private Label testLabel;
+
 
     @FXML
     public void initialize() {
@@ -31,14 +35,15 @@ public class ProfileController extends NavigationController {
         settingsButton.setOnAction(event -> goToSettings(event));
         logoutButton.setOnAction(event -> openLogout());
 
-        // TODO: Store in seperate method + utilise alongside profile data
-        Image img = new Image(getClass().getResource("/com/gameshub/images/sample.jpg").toExternalForm());
-        profileImage.setFill(new ImagePattern(img));
     }
 
     // Method to update active profile elements
+    @Override
     public void updateActiveProfileElements() {
         Profile activeProfile = profileManager.getActiveProfile();
         System.out.println(activeProfile);
+        testLabel.setText(activeProfile.getUsername());
+        Image img = new Image(getClass().getResource("/com/gameshub/images/sample.jpg").toExternalForm());
+        profileImage.setFill(new ImagePattern(img));
     }
 }

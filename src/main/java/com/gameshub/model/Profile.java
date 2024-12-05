@@ -55,7 +55,7 @@ public class Profile {
 
     @Override
     public String toString() {
-        return "Profile{username='" + username + "', passwordHash='" + passwordHash + "', avatar='" + avatar
+        return "Profile: {username='" + username + "', passwordHash='" + passwordHash + "', avatar='" + avatar
                 + "', preferences='" + preferences + "'}";
     }
 }

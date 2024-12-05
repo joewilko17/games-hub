@@ -1,8 +1,6 @@
 package com.gameshub.controller;
 
-import com.gameshub.model.AuthenticationManager;
 import com.gameshub.model.Profile;
-import com.gameshub.model.ProfileManager;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -24,16 +22,10 @@ public class LoginController extends NavigationController {
     @FXML
     private Label validationLabel;
 
-    private AuthenticationManager authenticationManager;
-    private ProfileManager profileManager;
-
-    public LoginController() {
-        this.authenticationManager = AuthenticationManager.getInstance();
-        this.profileManager = ProfileManager.getInstance();
-    }
 
     // Method to handle login + validation needed on existing profile -> before going to hub
     private void handleLogin() {
+        
         String username = usernameField.getText().trim();
         String password = passwordField.getText().trim();
         
@@ -41,6 +33,11 @@ public class LoginController extends NavigationController {
             Profile activeProfile = profileManager.getProfileByUsername(username);
             profileManager.setActiveProfile(activeProfile);
             System.out.println("Active Profile Set: " + activeProfile);
+            
+            
+
+
+            sceneManager.preloadScenes();
             handleExit(loginStage);
             openHub();
         }
@@ -49,14 +46,12 @@ public class LoginController extends NavigationController {
 
     private boolean validateFields(String usernameField, String passwordField) {
 
-        
-
         if (!authenticationManager.authenticateLogin(usernameField, passwordField, validationLabel)) {
             return false;
         }
-
         validationLabel.setVisible(false);
         return true;
+
     }
 
     @FXML
