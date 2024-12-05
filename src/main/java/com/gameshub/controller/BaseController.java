@@ -19,6 +19,8 @@ public abstract class BaseController {
     protected static Stage mainStage;
     protected static Stage logoutStage;
     protected static Stage loginStage;
+    protected static Stage changeUsernameStage;
+    protected static Stage changePasswordStage;
 
     protected ProfileManager profileManager;
     protected SceneManager sceneManager;

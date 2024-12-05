@@ -76,7 +76,7 @@ public class AuthenticationManager {
         return true;
     }
     
-    // Method to validate username creation
+    // Method to validate username for creation + updating
     public boolean validateUsername(String username) {
 
         // Check if username is unique

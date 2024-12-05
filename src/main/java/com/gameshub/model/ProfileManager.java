@@ -8,7 +8,7 @@ public class ProfileManager {
     private List<Profile> profiles;
     private JSONProfileStore profileStore;
     private Profile activeProfile;
-
+    
     private ProfileManager() {
         profileStore = new JSONProfileStore();
         profiles = profileStore.loadProfiles();
@@ -35,6 +35,18 @@ public class ProfileManager {
         profiles.add(profile);
         System.out.println("Added profile: " + profile.getUsername());
         profileStore.saveProfiles(profiles);
+    }
+
+    public void updateProfile(Profile profile) {
+        for (int i = 0; i < profiles.size(); i++) {
+            if (profiles.get(i).getUsername().equalsIgnoreCase(profile.getUsername())) {
+                profiles.set(i, profile);
+                System.out.println("Updated profile: " + profile.getUsername());
+                profileStore.saveProfiles(profiles);
+                return;
+            }
+        }
+        System.out.println("Profile not found: " + profile.getUsername());
     }
 
     public Profile getActiveProfile() {

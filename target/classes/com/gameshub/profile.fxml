@@ -126,12 +126,12 @@
                                     <Insets left="20.0" />
                                  </padding>
                               </Label>
-                              <Button mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" styleClass="menu-button" text="Change Username">
+                              <Button fx:id="changeUsernameButton" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" styleClass="menu-button" text="Change Username">
                                  <VBox.margin>
                                     <Insets left="20.0" top="20.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" styleClass="menu-button" text="Change Password">
+                              <Button fx:id="changePasswordButton" mnemonicParsing="false" prefHeight="18.0" prefWidth="160.0" styleClass="menu-button" text="Change Password">
                                  <VBox.margin>
                                     <Insets left="20.0" top="10.0" />
                                  </VBox.margin>
