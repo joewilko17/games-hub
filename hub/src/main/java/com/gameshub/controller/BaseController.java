@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.gameshub.model.AuthenticationManager;
+import com.gameshub.model.ImageConversionService;
 import com.gameshub.model.ProfileManager;
 import com.gameshub.model.SceneManager;
 
@@ -25,11 +26,13 @@ public abstract class BaseController {
     protected ProfileManager profileManager;
     protected SceneManager sceneManager;
     protected AuthenticationManager authenticationManager;
+    protected ImageConversionService imageConversionService;
 
     public BaseController() {
         this.profileManager = ProfileManager.getInstance();
         this.authenticationManager = AuthenticationManager.getInstance();
         this.sceneManager = SceneManager.getInstance();
+        this.imageConversionService = ImageConversionService.getInstance();
         registeredControllers.add(this);
     }
 

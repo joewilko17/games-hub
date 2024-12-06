@@ -53,8 +53,6 @@ public class LibraryController extends NavigationController {
         Profile activeProfile = profileManager.getActiveProfile();
         System.out.println(activeProfile);
         // The image will be stored within the profile JSON data and will need to be converted before displaying
-        Image img = new Image(getClass().getResource("/com/gameshub/images/sample.jpg").toExternalForm());
-        profileImage.setFill(new ImagePattern(img));
     }
 
     // Method to launch seperate game application

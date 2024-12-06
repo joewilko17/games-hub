@@ -36,7 +36,6 @@ public class SettingsController extends NavigationController {
     public void updateActiveProfileElements() {
         Profile activeProfile = profileManager.getActiveProfile();
         System.out.println(activeProfile);
-        Image img = new Image(getClass().getResource("/com/gameshub/images/sample.jpg").toExternalForm());
-        profileImage.setFill(new ImagePattern(img));
+
     }
 }

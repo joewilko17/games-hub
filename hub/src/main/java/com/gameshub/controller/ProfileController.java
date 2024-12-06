@@ -20,7 +20,7 @@ public class ProfileController extends NavigationController {
 
     // Navigation bar javaFX elements
     @FXML
-    private Circle profileImage;
+    private Circle profileImageCircle;
     @FXML
     private Button exitButton;
     @FXML
@@ -60,8 +60,9 @@ public class ProfileController extends NavigationController {
             System.out.println("This is the active profile username as of now: " + activeProfile.getUsername());
             usernameLabel.setText(activeProfile.getUsername());
             System.out.println(usernameLabel.getText());
-            Image img = new Image(getClass().getResource("/com/gameshub/images/avatars/9.png").toExternalForm());
-            profileImage.setFill(new ImagePattern(img));
+            System.out.println(activeProfile + "base64: " + activeProfile.getAvatarBase64());
+            Image img = imageConversionService.convertToImage(activeProfile.getAvatarBase64());
+            profileImageCircle.setFill(new ImagePattern(img));
         });
     }
 

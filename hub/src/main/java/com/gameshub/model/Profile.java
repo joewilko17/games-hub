@@ -7,17 +7,17 @@ public class Profile {
 
     private String username;
     private String passwordHash;
-    private String avatar;
+    private String avatarBase64;
     private String preferences;
 
     @JsonCreator
     public Profile(@JsonProperty("username") String username,
             @JsonProperty("passwordHash") String passwordHash,
-            @JsonProperty("avatar") String avatar,
+            @JsonProperty("avatarBase64") String avatarBase64,
             @JsonProperty("preferences") String preferences) {
         this.username = username;
         this.passwordHash = passwordHash;
-        this.avatar = avatar;
+        this.avatarBase64 = avatarBase64;
         this.preferences = preferences;
     }
 
@@ -37,12 +37,12 @@ public class Profile {
         this.passwordHash = passwordHash;
     }
 
-    public String getAvatar() {
-        return avatar;
+    public String getAvatarBase64() {
+        return avatarBase64;
     }
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public void setAvatarBase64(String avatar) {
+        this.avatarBase64 = avatar;
     }
 
     public String getPreferences() {
@@ -55,7 +55,7 @@ public class Profile {
 
     @Override
     public String toString() {
-        return "Profile: {username='" + username + "', passwordHash='" + passwordHash + "', avatar='" + avatar
+        return "Profile: {username='" + username + "', passwordHash='" + passwordHash + "', avatar='" + avatarBase64
                 + "', preferences='" + preferences + "'}";
     }
 }
