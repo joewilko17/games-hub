@@ -1,6 +1,5 @@
 package com.gameshub.controller;
 
-import com.gameshub.model.AuthenticationManager;
 import com.gameshub.model.Profile;
 
 import javafx.fxml.FXML;

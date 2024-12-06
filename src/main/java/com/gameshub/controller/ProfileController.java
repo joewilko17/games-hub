@@ -88,21 +88,21 @@ public class ProfileController extends NavigationController {
 
     // Method to close password changing dialog window
     private void openChangePasswordDialog() {
-        // try {
-        // changePasswordStage = new Stage();
-        // FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/gameshub/changepassword.fxml"));
-        // Parent root = loader.load();
-        // Scene changePasswordScene = new Scene(root);
-        // sceneManager.addScene("changepassword", root, loader.getController());
-        // // ChangePasswordController controller = loader.getController();
-        // // controller.updateActiveProfileElements();
-        // changePasswordStage.setScene(changePasswordScene);
-        // changePasswordStage.initStyle(StageStyle.UNDECORATED);
-        // changePasswordStage.initOwner(mainStage);
-        // changePasswordStage.initModality(Modality.APPLICATION_MODAL);
-        // changePasswordStage.showAndWait();
-        // } catch (Exception e) {
-        // e.printStackTrace();
-        // }
+        try {
+        changePasswordStage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/gameshub/changepassword.fxml"));
+        Parent root = loader.load();
+        Scene changePasswordScene = new Scene(root);
+        sceneManager.addScene("changepassword", root, loader.getController());
+        // ChangePasswordController controller = loader.getController();
+        // controller.updateActiveProfileElements();
+        changePasswordStage.setScene(changePasswordScene);
+        changePasswordStage.initStyle(StageStyle.UNDECORATED);
+        changePasswordStage.initOwner(mainStage);
+        changePasswordStage.initModality(Modality.APPLICATION_MODAL);
+        changePasswordStage.showAndWait();
+        } catch (Exception e) {
+        e.printStackTrace();
+        }
     }
 }
