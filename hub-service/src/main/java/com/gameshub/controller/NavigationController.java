@@ -1,8 +1,13 @@
 package com.gameshub.controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public abstract class NavigationController extends BaseController {
 
@@ -58,12 +63,31 @@ public abstract class NavigationController extends BaseController {
     // Method to open a new window
     private void openStage(Stage stage) {
         try {
-            stage.setOnShown(event -> {
-                BaseController.triggerUpdateActiveProfileElements();
-            });
+            // stage.setOnShown(event -> {
+            //     BaseController.triggerUpdateActiveProfileElements();
+            // });
 
             stage.show();
+            BaseController.triggerUpdateActiveProfileElements();
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void openChangeAvatarDialog() {
+        try {
+            changeAvatarStage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/gameshub/changeavatar.fxml"));
+            Parent root = loader.load();
+            Scene changeAvatarScene = new Scene(root);
+            sceneManager.addScene("changeavatar", root, loader.getController());
+            changeAvatarStage.setScene(changeAvatarScene);
+            changeAvatarStage.initStyle(StageStyle.UNDECORATED);
+            changeAvatarStage.initOwner(mainStage);
+            changeAvatarStage.initModality(Modality.APPLICATION_MODAL);
+            changeAvatarStage.showAndWait();
+            BaseController.triggerUpdateActiveProfileElements();
         } catch (Exception e) {
             e.printStackTrace();
         }

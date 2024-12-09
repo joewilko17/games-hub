@@ -34,7 +34,7 @@ public class Main extends Application {
         loginStage.setScene(loginScene);
         loginStage.initStyle(StageStyle.UNDECORATED);
 
-        FXMLLoader mainLoader = new FXMLLoader(getClass().getResource("library.fxml"));
+        FXMLLoader mainLoader = new FXMLLoader(getClass().getResource("profile.fxml"));
         Scene mainScene = new Scene(mainLoader.load());
         mainStage.setScene(mainScene);
         mainStage.initStyle(StageStyle.UNDECORATED);

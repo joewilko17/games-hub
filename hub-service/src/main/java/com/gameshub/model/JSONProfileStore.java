@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.List;
 
 public class JSONProfileStore {
-    private static final String FILE_PATH = "hub/src/main/java/com/gameshub/data/profiles.json";
+    private static final String FILE_PATH = "hub-service/src/main/java/com/gameshub/data/profiles.json";
     private ObjectMapper objectMapper;
 
     public JSONProfileStore() {

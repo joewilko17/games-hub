@@ -22,6 +22,7 @@ public abstract class BaseController {
     protected static Stage loginStage;
     protected static Stage changeUsernameStage;
     protected static Stage changePasswordStage;
+    protected static Stage changeAvatarStage;
 
     protected ProfileManager profileManager;
     protected SceneManager sceneManager;
@@ -33,7 +34,6 @@ public abstract class BaseController {
         this.authenticationManager = AuthenticationManager.getInstance();
         this.sceneManager = SceneManager.getInstance();
         this.imageConversionService = ImageConversionService.getInstance();
-        registeredControllers.add(this);
     }
 
     // Method to update any controller with profile data
@@ -44,7 +44,7 @@ public abstract class BaseController {
             controller.updateActiveProfileElements();
         }
     }
-    
+
     // Initialize stages within main.java
     public static void initializeStages(Stage login, Stage main, Stage logout) {
         loginStage = login;
@@ -77,7 +77,8 @@ public abstract class BaseController {
 
     }
 
-    // Method to reset the login stage back to the login scene (instead of showing create profile, if selected)
+    // Method to reset the login stage back to the login scene (instead of showing
+    // create profile, if selected)
     public void resetLogin() throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/gameshub/login.fxml"));
         Parent root = loader.load();

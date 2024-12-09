@@ -43,7 +43,7 @@ public class ChangeUsernameController extends NavigationController {
         if (authenticationManager.validateUsername(newUsername)) {
             profileManager.getActiveProfile().setUsername(newUsername);
             profileManager.updateProfile(profileManager.getActiveProfile());
-            sceneManager.updateScene(mainStage);
+            BaseController.triggerUpdateActiveProfileElements();
             handleExit(changeUsernameStage);
             validationLabel.setVisible(false);
         } else {

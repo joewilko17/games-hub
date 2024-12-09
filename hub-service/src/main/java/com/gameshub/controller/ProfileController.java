@@ -1,8 +1,9 @@
 package com.gameshub.controller;
 
+import java.io.File;
+
 import com.gameshub.model.Profile;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -49,21 +50,19 @@ public class ProfileController extends NavigationController {
         logoutButton.setOnAction(event -> openLogout());
         changeUsernameButton.setOnAction(event -> openChangeUsernameDialog());
         changePasswordButton.setOnAction(event -> openChangePasswordDialog());
+        profileImageCircle.setOnMouseClicked(event -> openChangeAvatarDialog());
     }
 
     // Method to update active profile elements
     @Override
     public void updateActiveProfileElements() {
         Profile activeProfile = profileManager.getActiveProfile();
-        Platform.runLater(() -> {
-            System.out.println("Updating the profile UI");
-            System.out.println("This is the active profile username as of now: " + activeProfile.getUsername());
-            usernameLabel.setText(activeProfile.getUsername());
-            System.out.println(usernameLabel.getText());
-            System.out.println(activeProfile + "base64: " + activeProfile.getAvatarBase64());
-            Image img = imageConversionService.convertToImage(activeProfile.getAvatarBase64());
-            profileImageCircle.setFill(new ImagePattern(img));
-        });
+        System.out.println("This is the active profile username as of now: " + activeProfile.getUsername());
+        usernameLabel.setText(activeProfile.getUsername());
+        File imageFile = new File(activeProfile.getAvatarImageURL());
+        System.out.println(imageFile);
+        Image img = new Image(imageFile.toURI().toString());
+        profileImageCircle.setFill(new ImagePattern(img));
     }
 
     // Method to open username changing dialog window
@@ -74,8 +73,6 @@ public class ProfileController extends NavigationController {
             Parent root = loader.load();
             Scene changeUsernameScene = new Scene(root);
             sceneManager.addScene("changeusername", root, loader.getController());
-            // ChangeUsernameController controller = loader.getController();
-            // controller.updateActiveProfileElements();
             changeUsernameStage.setScene(changeUsernameScene);
             changeUsernameStage.initStyle(StageStyle.UNDECORATED);
             changeUsernameStage.initOwner(mainStage);

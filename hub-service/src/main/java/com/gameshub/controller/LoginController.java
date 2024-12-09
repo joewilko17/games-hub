@@ -34,6 +34,7 @@ public class LoginController extends NavigationController {
             profileManager.setActiveProfile(activeProfile);
             System.out.println("Active Profile Set: " + activeProfile);
             handleExit(loginStage);
+            BaseController.triggerUpdateActiveProfileElements();
             openHub();
         }
 

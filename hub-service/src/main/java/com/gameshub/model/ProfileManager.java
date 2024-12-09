@@ -12,7 +12,6 @@ public class ProfileManager {
     private ProfileManager() {
         profileStore = new JSONProfileStore();
         profiles = profileStore.loadProfiles();
-        System.out.println(profiles);
         if (profiles == null) {
             profiles = new ArrayList<>();
         }

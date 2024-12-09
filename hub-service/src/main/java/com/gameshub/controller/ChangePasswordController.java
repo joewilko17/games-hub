@@ -78,7 +78,7 @@ public class ChangePasswordController extends NavigationController {
             profileManager.updateProfile(profileManager.getActiveProfile());
 
             // Update the scene and close the change password window
-            sceneManager.updateScene(mainStage);
+            BaseController.triggerUpdateActiveProfileElements();
             handleExit(changePasswordStage);
             validationLabel.setVisible(false);
         } catch (Exception e) {

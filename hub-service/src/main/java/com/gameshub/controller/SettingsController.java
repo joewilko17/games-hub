@@ -1,5 +1,7 @@
 package com.gameshub.controller;
 
+import java.io.File;
+
 import com.gameshub.model.Profile;
 
 import javafx.fxml.FXML;
@@ -30,13 +32,15 @@ public class SettingsController extends NavigationController {
         libraryButton.setOnAction(event -> goToLibrary(event));
         settingsButton.setOnAction(event -> goToSettings(event));
         logoutButton.setOnAction(event -> openLogout());
+        profileImageCircle.setOnMouseClicked(event -> openChangeAvatarDialog());
     }
 
     // Method to update active profile elements
     public void updateActiveProfileElements() {
         Profile activeProfile = profileManager.getActiveProfile();
         System.out.println(activeProfile);
-        Image img = imageConversionService.convertToImage(activeProfile.getAvatarBase64());
+        File imageFile = new File(activeProfile.getAvatarImageURL());
+        Image img = new Image(imageFile.toURI().toString());
         profileImageCircle.setFill(new ImagePattern(img));
 
     }

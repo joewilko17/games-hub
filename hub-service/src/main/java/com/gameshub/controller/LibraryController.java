@@ -1,5 +1,7 @@
 package com.gameshub.controller;
 
+import java.io.File;
+
 import com.gameshub.model.Profile;
 
 import javafx.event.Event;
@@ -46,15 +48,18 @@ public class LibraryController extends NavigationController {
         gameButton2.setOnAction(event -> launchGame(event));
         gameButton3.setOnAction(event -> launchGame(event));
         gameButton4.setOnAction(event -> launchGame(event));
+        profileImageCircle.setOnMouseClicked(event -> openChangeAvatarDialog());
     }
 
     // Method to update active profile elements
     public void updateActiveProfileElements() {
         Profile activeProfile = profileManager.getActiveProfile();
-        System.out.println(activeProfile);
-        Image img = imageConversionService.convertToImage(activeProfile.getAvatarBase64());
+        System.out.println("this is libraryprofile");
+        File imageFile = new File(activeProfile.getAvatarImageURL());
+        Image img = new Image(imageFile.toURI().toString());
+        System.out.print("setting profileCircleImage to:" + img.getUrl());
         profileImageCircle.setFill(new ImagePattern(img));
-        // The image will be stored within the profile JSON data and will need to be converted before displaying
+        System.out.print(profileImageCircle.getFill());
     }
 
     // Method to launch seperate game application
