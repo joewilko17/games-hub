@@ -1,6 +1,19 @@
 [ {
-  "username" : "1111",
-  "passwordHash" : "$2a$10$T/ewBVZiTD5G6wYTJ7qQjuxYLxYCaTgqDzcTQUdPQ/e8vPZR98HnG",
+  "username" : "Alice",
+  "passwordHash" : "$2a$10$0jRA95g7af0pWHGH8lcq1urTItbBnVWuH5dbVuicbofI2sYRlRrpe",
+  "avatarImageURL" : "hub-service/images/avatars/7.jpg",
+  "preferences" : {
+    "defaultDifficulty" : "easy",
+    "theme" : "dark",
+    "showHints" : true
+  }
+}, {
+  "username" : "Joe",
+  "passwordHash" : "$2a$10$B/x4vkB1R463Ah1ed1ismuNw.xSpAxFsqbsRrQXzYk1t3MjotS4we",
   "avatarImageURL" : "hub-service/images/avatars/3.jpg",
-  "preferences" : "not implemented"
+  "preferences" : {
+    "defaultDifficulty" : "medium",
+    "theme" : "dark",
+    "showHints" : false
+  }
 } ]

@@ -1,5 +1,7 @@
 package com.gameshub.model;
 
+import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -8,13 +10,13 @@ public class Profile {
     private String username;
     private String passwordHash;
     private String avatarImageURL;
-    private String preferences;
+    private Map<String, Object> preferences;
 
     @JsonCreator
     public Profile(@JsonProperty("username") String username,
             @JsonProperty("passwordHash") String passwordHash,
             @JsonProperty("avatarImageURL") String avatarImageURL,
-            @JsonProperty("preferences") String preferences) {
+            @JsonProperty("preferences") Map<String, Object> preferences) {
         this.username = username;
         this.passwordHash = passwordHash;
         this.avatarImageURL = avatarImageURL;
@@ -45,11 +47,11 @@ public class Profile {
         this.avatarImageURL = avatar;
     }
 
-    public String getPreferences() {
+    public Map<String, Object> getPreferences() {
         return preferences;
     }
 
-    public void setPreferences(String preferences) {
+    public void setPreferences(Map<String, Object> preferences) {
         this.preferences = preferences;
     }
 

@@ -36,6 +36,7 @@ public class LogoutController extends NavigationController {
             }
         });
         cancelButton.setOnAction(event -> handleCancel(logoutStage));
+        makeToolbarDraggable();
     }
 
      // Currently no elements to update

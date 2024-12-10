@@ -55,6 +55,7 @@ public class LoginController extends NavigationController {
         exitButton.setOnAction(event -> handleExit(loginStage));
         loginButton.setOnAction(event -> handleLogin());
         createprofileButton.setOnAction(event -> goToCreateProfile(event));
+        makeToolbarDraggable();
     }
 
     // Currently no elements to update

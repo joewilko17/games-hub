@@ -28,6 +28,7 @@ public class ChangeUsernameController extends NavigationController {
         exitButton.setOnAction(event -> handleExit(changeUsernameStage));
         cancelButton.setOnAction(event -> handleExit(changeUsernameStage));
         confirmButton.setOnAction(event -> updateUsername());
+        makeToolbarDraggable();
         
     }
 

@@ -49,6 +49,7 @@ public class LibraryController extends NavigationController {
         gameButton3.setOnAction(event -> launchGame(event));
         gameButton4.setOnAction(event -> launchGame(event));
         profileImageCircle.setOnMouseClicked(event -> openChangeAvatarDialog());
+        makeToolbarDraggable();
     }
 
     // Method to update active profile elements

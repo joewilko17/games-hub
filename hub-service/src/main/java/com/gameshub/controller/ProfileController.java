@@ -51,6 +51,7 @@ public class ProfileController extends NavigationController {
         changeUsernameButton.setOnAction(event -> openChangeUsernameDialog());
         changePasswordButton.setOnAction(event -> openChangePasswordDialog());
         profileImageCircle.setOnMouseClicked(event -> openChangeAvatarDialog());
+        makeToolbarDraggable();
     }
 
     // Method to update active profile elements

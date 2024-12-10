@@ -111,7 +111,7 @@
             </GridPane>
          </center>
          <top>
-            <HBox alignment="TOP_RIGHT" prefHeight="40.0" prefWidth="990.0" style="-fx-background-color: #33363C;" BorderPane.alignment="CENTER">
+            <HBox fx:id="toolbarHBox" alignment="TOP_RIGHT" prefHeight="40.0" prefWidth="990.0" style="-fx-background-color: #33363C;" BorderPane.alignment="CENTER">
                <children>
                   <Label prefHeight="17.0" prefWidth="80.0" text="Games Hub" textFill="WHITE">
                      <HBox.margin>

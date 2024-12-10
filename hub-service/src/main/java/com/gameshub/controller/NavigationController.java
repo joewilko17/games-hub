@@ -63,10 +63,6 @@ public abstract class NavigationController extends BaseController {
     // Method to open a new window
     private void openStage(Stage stage) {
         try {
-            // stage.setOnShown(event -> {
-            //     BaseController.triggerUpdateActiveProfileElements();
-            // });
-
             stage.show();
             BaseController.triggerUpdateActiveProfileElements();
 

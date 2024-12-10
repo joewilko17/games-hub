@@ -27,6 +27,7 @@ public class ChangePasswordController extends NavigationController {
         exitButton.setOnAction(event -> handleExit(changePasswordStage));
         cancelButton.setOnAction(event -> handleExit(changePasswordStage));
         confirmButton.setOnAction(event -> updatePassword());
+        makeToolbarDraggable();
     }
 
     @Override

@@ -42,12 +42,6 @@ public class ChangeAvatarController extends NavigationController {
     @FXML
     private Circle avatarImageCircle8;
 
-    // private Circle[] avatarCircles = {
-    // avatarImageCircle1, avatarImageCircle2, avatarImageCircle3,
-    // avatarImageCircle4,
-    // avatarImageCircle5, avatarImageCircle6, avatarImageCircle7,
-    // avatarImageCircle8 };
-
     @FXML
     public void initialize() {
         Profile activeProfile = profileManager.getActiveProfile();
@@ -61,9 +55,12 @@ public class ChangeAvatarController extends NavigationController {
         confirmButton.setOnAction(event -> updateAvatar(selectedAvatarImageURL));
         loadAvatarImages(avatarCircles);
         setSelectedAvatarImage(activeProfile.getAvatarImageURL(), avatarCircles);
+
         for (Circle circle : avatarCircles) {
             circle.setOnMouseClicked(event -> selectAvatarImage(circle, avatarCircles));
         }
+
+        makeToolbarDraggable();
     }
 
     @Override

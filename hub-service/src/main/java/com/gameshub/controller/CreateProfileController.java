@@ -1,6 +1,8 @@
 package com.gameshub.controller;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.gameshub.model.Profile;
 
@@ -24,12 +26,12 @@ public class CreateProfileController extends NavigationController {
 
     // Default avatar and preferences for profile creation
     private static final String DEFAULT_AVATAR = "hub-service/images/avatars/1.jpg";
-    private static final String DEFAULT_PREFERENCES = "not implemented";
 
     @FXML
     public void initialize() {
         exitButton.setOnAction(event -> handleExit(loginStage));
         createprofileButton.setOnAction(event -> createProfile());
+        makeToolbarDraggable();
     }
 
     // Currently no elements to update
@@ -39,12 +41,16 @@ public class CreateProfileController extends NavigationController {
 
     // Method to handle profile creation
     private void createProfile() {
-        
+
         String username = usernameField.getText().trim();
         String password = passwordField.getText().trim();
         String avatar = DEFAULT_AVATAR;
-        String preferences = DEFAULT_PREFERENCES;
-        
+
+        Map<String, Object> defaultPreferences = new HashMap<>();
+        defaultPreferences.put("theme", "dark");
+        defaultPreferences.put("defaultDifficulty", "easy");
+        defaultPreferences.put("showHints", true);
+
         // Check that input fields are not empty before creating profile
         if (username.isEmpty() || password.isEmpty()) {
             validationLabel.setVisible(true);
@@ -59,8 +65,13 @@ public class CreateProfileController extends NavigationController {
 
         // Authenticate profile creation and check for validation
         if (authenticationManager.authenticateProfileCreation(username, password, validationLabel)) {
+            
             // Create the new profile with the avatar and preferences
-            Profile newProfile = new Profile(username, authenticationManager.hashPassword(password), avatar, preferences);
+            Profile newProfile = new Profile(
+                    username,
+                    authenticationManager.hashPassword(password),
+                    avatar,
+                    defaultPreferences);
 
             // Add the profile to the profile manager and set as active profile
             profileManager.addProfile(newProfile);
@@ -70,8 +81,7 @@ public class CreateProfileController extends NavigationController {
 
             // Handle profile creation success
             handleExit(loginStage);
-            openHub();  // Open the main hub after profile creation
+            openHub(); // Open the main hub after profile creation
         }
     }
 }
-

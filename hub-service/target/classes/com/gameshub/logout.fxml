@@ -46,7 +46,7 @@
    <children>
       <BorderPane prefHeight="200.0" prefWidth="352.0">
          <top>
-            <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="367.0" style="-fx-background-color: #33363C;" BorderPane.alignment="CENTER">
+            <HBox fx:id="toolbarHBox" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="367.0" style="-fx-background-color: #33363C;" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="exitButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="toolbar-button" stylesheets="@css/styles.css" textAlignment="CENTER">
                      <graphic>

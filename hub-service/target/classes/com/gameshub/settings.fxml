@@ -34,6 +34,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -90,7 +92,7 @@
             </VBox>
          </left>
          <top>
-            <HBox alignment="TOP_RIGHT" prefHeight="40.0" prefWidth="990.0" style="-fx-background-color: #33363C;" BorderPane.alignment="CENTER">
+            <HBox fx:id="toolbarHBox" alignment="TOP_RIGHT" prefHeight="40.0" prefWidth="990.0" style="-fx-background-color: #33363C;" BorderPane.alignment="CENTER">
                <children>
                   <Label prefHeight="17.0" prefWidth="80.0" text="Games Hub" textFill="WHITE">
                      <HBox.margin>
@@ -113,9 +115,56 @@
             </HBox>
          </top>
          <center>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #1E1E1E;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="594.0" prefWidth="872.0" style="-fx-background-color: #1E1E1E;" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Placeholder Settings Page" textFill="WHITE" />
+                  <HBox prefHeight="70.0" prefWidth="770.0">
+                     <children>
+                        <Label prefHeight="23.0" prefWidth="130.0" text="Theme" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="themeChoiceBox" prefHeight="23.0" prefWidth="90.0" style="-fx-background-color: #92BCEA;">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="70.0" prefWidth="770.0">
+                     <children>
+                        <Label prefHeight="23.0" prefWidth="130.0" text="Default Game Difficulty" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="defaultDifficultyChoiceBox" prefHeight="23.0" prefWidth="90.0" style="-fx-background-color: #92BCEA;">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="70.0" prefWidth="770.0">
+                     <children>
+                        <CheckBox fx:id="showHintsCheckBox" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" selected="true" text="Show Hints" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+                  <Button fx:id="saveChangesButton" mnemonicParsing="false" prefHeight="27.0" prefWidth="180.0" styleClass="menu-button" stylesheets="@css/styles.css" text="Save Changes" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="60.0" top="-5.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
          </center>
