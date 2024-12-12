@@ -1,0 +1,25 @@
+.toolbar-component {
+    -fx-background-color: #33363C; 
+}
+
+.toolbar-component .button {
+    -fx-background-color: #282828;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0;
+}
+
+.toolbar-component .button:hover {
+    -fx-background-color: #3f3f3f;
+}
+
+.toolbar-component .label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+}
+
+.content-border-pane {
+    -fx-background-color: #1E1E1E; 
+}
+
+
