@@ -1,3 +1,7 @@
+.validation-label {
+    -fx-text-fill: #00ff00;
+}
+
 .toolbar-component {
     -fx-background-color: #33363C; 
 }
@@ -39,7 +43,7 @@
 .setup-container {
     -fx-background-color: #282828;
 }
-.setup-config-container {
+.setup-menu-container {
     -fx-background-color: #33363C;
 }
 .setup-title-label {
@@ -56,4 +60,18 @@
     -fx-text-fill:#ffffff;
 }
 
+.options-container {
+    -fx-background-color: #282828;
+}
+.options-menu-container {
+    -fx-background-color: #33363C;
+}
+.options-title-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-family: "Arial";
+}
+.options-hints-checkbox {
+    -fx-text-fill: #ffffff;
+}
 
