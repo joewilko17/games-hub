@@ -1,5 +1,6 @@
 package com.gameshub.view;
 
+import com.gameshub.controller.SceneManager;
 import com.gameshub.view.components.ToolbarComponent;
 
 import javafx.scene.Scene;
@@ -9,18 +10,31 @@ import javafx.stage.Stage;
 
 public abstract class BaseScene {
 
+    protected SceneManager sceneManager;
+    protected Scene scene;
+
     private AnchorPane rootAnchorPane;
     private BorderPane contentBorderPane;
     private ToolbarComponent toolbarComponent;
 
     public BaseScene(Stage stage) {
+        
+        sceneManager = SceneManager.getInstance(stage);
         buildBaseGUI(stage);
+        
     }
 
-    public abstract void initialiseSceneUI();
+    protected abstract void initialiseSceneUI();
+
+    protected abstract void initialiseControlEvents(Stage stage);
+
+    public Scene createScene(int width, int height) {
+        scene = new Scene(rootAnchorPane, width, height);
+        return scene;
+    }
 
     public Scene getScene() {
-        return new Scene(rootAnchorPane, 800, 600); // Adjust dimensions as needed
+        return scene;
     }
 
     public BorderPane getcontentBorderPane() {
@@ -31,13 +45,12 @@ public abstract class BaseScene {
 
         rootAnchorPane = new AnchorPane();
         contentBorderPane = new BorderPane();
-        toolbarComponent = new ToolbarComponent();
+        toolbarComponent = new ToolbarComponent(stage);
 
         toolbarComponent.setTitle("Minesweeper");
         // Improvised shutdown method before EventHandler implementation
-        toolbarComponent.setOnExitAction(() -> stage.close()); 
+        // toolbarComponent.setOnExitAction(() -> stage.close());
 
-        
         rootAnchorPane.getChildren().add(contentBorderPane);
         AnchorPane.setTopAnchor(contentBorderPane, 0.0);
         AnchorPane.setBottomAnchor(contentBorderPane, 0.0);
@@ -54,5 +67,4 @@ public abstract class BaseScene {
 
     }
 
-    
 }

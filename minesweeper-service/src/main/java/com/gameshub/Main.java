@@ -7,19 +7,21 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-import com.gameshub.view.BaseScene;
+import com.gameshub.controller.SceneManager;
+
+
 
 public class Main extends Application {
 
+    private SceneManager sceneManager;
+
     @Override
     public void start(Stage mainStage) throws IOException {
-        
-        mainStage = new Stage();
 
-        BaseScene baseScene = new BaseScene(mainStage);
+        sceneManager = SceneManager.getInstance(mainStage);
 
         mainStage.initStyle(StageStyle.UNDECORATED);
-        mainStage.setScene(baseScene.getScene());
+        mainStage.setScene(sceneManager.getScene("SplashScene"));
         mainStage.show();
 
     }
@@ -29,5 +31,5 @@ public class Main extends Application {
         launch();
 
     }
-    
+
 }

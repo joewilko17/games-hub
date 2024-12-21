@@ -1,5 +1,7 @@
 package com.gameshub.view;
 
+import com.gameshub.controller.UIEventHelper;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -8,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 
 public class OptionsScene extends BaseScene {
 
@@ -23,8 +26,10 @@ public class OptionsScene extends BaseScene {
 
 
     public OptionsScene(Stage stage) {
+
         super(stage);
         initialiseSceneUI();
+        initialiseControlEvents(stage);
     }
 
     @Override
@@ -69,6 +74,12 @@ public class OptionsScene extends BaseScene {
         buttonsContainerHBox.getChildren().addAll(backButton,saveChangesButton);
         containerVBox.getChildren().addAll(validationLabel,optionsMenuContainerVBox,buttonsContainerHBox);
         getcontentBorderPane().setCenter(containerVBox);
+    }
+
+    @Override
+    protected void initialiseControlEvents(Stage stage) {
+       backButton.setOnAction(_ -> UIEventHelper.handleNavigation(stage, sceneManager.getScene("SplashScene"))); 
+       saveChangesButton.setOnAction(_ -> System.out.println("Save Changes Called"));
     }
     
 }

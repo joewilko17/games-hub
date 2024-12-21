@@ -1,5 +1,7 @@
 package com.gameshub.view.components;
 
+import com.gameshub.controller.UIEventHelper;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -7,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 public class ToolbarComponent {
 
@@ -16,11 +19,11 @@ public class ToolbarComponent {
     private ImageView exitIconImageView;
     private Image exitIconImage;
 
-    public ToolbarComponent() {
-        buildComponent();
+    public ToolbarComponent(Stage stage) {
+        initialiseComponent(stage);
     }
 
-    private void buildComponent() {
+    private void initialiseComponent(Stage stage) {
 
         toolbarStackPane = new StackPane();
         titleLabel = new Label();
@@ -40,6 +43,9 @@ public class ToolbarComponent {
         exitButton.setPrefHeight(40);
         exitButton.setPrefHeight(45);
         exitButton.setGraphic(exitIconImageView);
+        exitButton.setOnAction(_ -> UIEventHelper.handleExit(stage));
+
+        System.out.println(exitButton.getScene());
         
         StackPane.setAlignment(exitButton, Pos.CENTER_RIGHT);
         StackPane.setAlignment(titleLabel, Pos.CENTER_LEFT);
@@ -55,7 +61,5 @@ public class ToolbarComponent {
         titleLabel.setText(title);
     }
 
-    public void setOnExitAction(Runnable action) {
-        exitButton.setOnAction(e -> action.run());
-    }
+
 }

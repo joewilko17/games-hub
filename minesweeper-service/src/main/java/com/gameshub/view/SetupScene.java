@@ -1,5 +1,7 @@
 package com.gameshub.view;
 
+import com.gameshub.controller.UIEventHelper;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -9,6 +11,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 
 public class SetupScene extends BaseScene {
 
@@ -29,6 +32,7 @@ public class SetupScene extends BaseScene {
 
         super(stage);
         initialiseSceneUI();
+        initialiseControlEvents(stage);
 
     }
 
@@ -49,10 +53,10 @@ public class SetupScene extends BaseScene {
         startButton = new Button();
 
         containerVBox.getStyleClass().add("setup-container");
-        containerVBox.setMaxSize(800, 450);
+        containerVBox.setMaxSize(700, 460);
         containerVBox.setAlignment(Pos.CENTER);
 
-        setupConfigContainerVBox.getStyleClass().add("setup-config-container");
+        setupConfigContainerVBox.getStyleClass().add("setup-menu-container");
         setupConfigContainerVBox.setMaxSize(380, 300);
         setupConfigContainerVBox.setAlignment(Pos.CENTER);
         VBox.setMargin(setupDifficultyContainerVBox, new Insets(20));
@@ -95,6 +99,13 @@ public class SetupScene extends BaseScene {
         buttonsContainerHBox.getChildren().addAll(backButton, startButton);
         containerVBox.getChildren().addAll(setupConfigContainerVBox,buttonsContainerHBox);
         getcontentBorderPane().setCenter(containerVBox);
+    }
+
+    @Override
+    protected void initialiseControlEvents(Stage stage) {
+        // Refactor to startGame() method which will commence the game to start with correct settings and scene
+        startButton.setOnAction(_ -> UIEventHelper.handleNavigation(stage, sceneManager.getScene("GameScene")));
+        backButton.setOnAction(_ -> UIEventHelper.handleNavigation(stage, sceneManager.getScene("SplashScene")));
     }
 
 }

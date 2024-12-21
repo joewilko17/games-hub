@@ -1,10 +1,14 @@
 package com.gameshub.view;
 
+
+import com.gameshub.controller.UIEventHelper;
+
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 
 public class SplashScene extends BaseScene {
    
@@ -19,7 +23,7 @@ public class SplashScene extends BaseScene {
 
         super(stage);
         initialiseSceneUI();
-        
+        initialiseControlEvents(stage);
     }
 
     @Override
@@ -33,7 +37,7 @@ public class SplashScene extends BaseScene {
         quitButton = new Button();
 
         containerVBox.getStyleClass().add("splash-container");
-        containerVBox.setMaxSize(800, 450);
+        containerVBox.setMaxSize(700, 460); 
         containerVBox.setAlignment(Pos.CENTER);
        
         buttonContainerVBox.setAlignment(Pos.CENTER);
@@ -57,6 +61,13 @@ public class SplashScene extends BaseScene {
         containerVBox.getChildren().addAll(titleLabel,buttonContainerVBox);
         getcontentBorderPane().setCenter(containerVBox);
 
+    }
+
+    @Override
+    protected void initialiseControlEvents(Stage stage) {
+        startButton.setOnAction(_ -> UIEventHelper.handleNavigation(stage, sceneManager.getScene("SetupScene")));
+        optionsButton.setOnAction(_ -> UIEventHelper.handleNavigation(stage, sceneManager.getScene("OptionsScene")));
+        quitButton.setOnAction(_ -> UIEventHelper.handleExit(stage));
     }
 
 }
