@@ -28,7 +28,6 @@ public class Main extends Application {
             currentProfileName = params.get(0); // Get the first argument passed
             System.out.println("Current profile name: " + currentProfileName);
         }
-        currentProfileName = "Joe"; // TEST LINE
         profileManager = ProfileManager.getInstance(currentProfileName);
         stageManager = StageManager.getInstance();
         stageManager.setMainStage(mainStage);
