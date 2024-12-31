@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.gameshubproject</groupId>  <!-- The group ID from the root POM -->
+        <artifactId>games-hub-project</artifactId>  <!-- The artifact ID from the root POM -->
+        <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>  <!-- Path to the root parent POM -->
+    </parent>
+    <artifactId>minesweeperservice</artifactId>
+    <dependencies>
+         <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <pluginManagement>
+            <plugins>
+               <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <release>23</release>
+                </configuration>
+            </plugin>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.2.0</version>
+            <configuration>
+                <archive>
+                    <manifestEntries>
+                        <Main-Class>com.minesweeperservice.Main</Main-Class>
+                    </manifestEntries>
+                </archive>
+            </configuration>
+        </plugin>
+             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.minesweeperservice.Main</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
