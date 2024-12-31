@@ -1,0 +1,186 @@
+.validation-label {
+    -fx-text-fill: #00ff00;
+}
+
+.toolbar-component {
+    -fx-background-color: #33363C;
+}
+
+.toolbar-component .button {
+    -fx-background-color: #282828;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0;
+}
+
+.toolbar-component .button:hover {
+    -fx-background-color: #3f3f3f;
+}
+
+.toolbar-component .label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+}
+
+.content-border-pane {
+    -fx-background-color: #1E1E1E;
+}
+
+.menu-button {
+    -fx-background-color: #92BCEA;
+    -fx-background-radius: 10px;
+    -fx-background-insets: 0;
+}
+
+.menu-button:hover {
+    -fx-background-color: #aecdee;
+}
+
+.splash-container {
+    -fx-background-color: #282828;
+}
+
+.splash-title-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 48px;
+    -fx-font-family: "Arial";
+}
+
+.setup-container {
+    -fx-background-color: #282828;
+}
+
+.setup-menu-container {
+    -fx-background-color: #33363C;
+}
+
+.setup-title-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-family: "Arial";
+}
+
+.setup-subtitle-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-family: "Arial";
+}
+
+.setup-radio-button {
+    -fx-text-fill: #ffffff;
+}
+
+.options-container {
+    -fx-background-color: #282828;
+}
+
+.options-menu-container {
+    -fx-background-color: #33363C;
+}
+
+.options-title-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-family: "Arial";
+}
+
+.options-hints-checkbox {
+    -fx-text-fill: #ffffff;
+}
+
+.game-container {
+    -fx-background-color: #282828;
+}
+
+.game-menu-button {
+    -fx-background-color: #92BCEA;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0;
+    -fx-text-fill: #ffffff;
+}
+
+.game-reset-button {
+    -fx-background-color: #c70000;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0;
+    -fx-text-fill: #ffffff;
+}
+
+.game-reset-button:hover {
+    -fx-background-color: #ff0000;
+}
+
+.game-reset-button-disabled {
+    -fx-background-color: #c70000;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0;
+    -fx-text-fill: #ffffff;
+    -fx-pointer-events: none;
+}
+
+.game-grid-container {
+    -fx-background-color: #33363C;
+}
+
+.game-score-component {
+    -fx-background-color: #33363C;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px;
+}
+
+.game-timer-component {
+    -fx-background-color: #33363C;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px;
+}
+
+.game-display-component {
+    -fx-background-color: #33363C;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px;
+}
+
+.finish-container {
+    -fx-background-color: #282828;
+
+}
+
+.finish-menu-container {
+    -fx-background-color: #33363C;
+}
+
+.finish-title-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-family: "Arial";
+}
+
+.finish-stat-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-family: "Arial";
+}
+
+.pause-title-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-family: "Arial";
+}
+
+.tile-unrevealed {
+    -fx-border-color: #606060;
+    -fx-border-width: 1px;
+    -fx-background-color: #c0c0c0;
+}
+
+.tile-revealed-empty {
+    -fx-border-color: #606060;
+    -fx-border-width: 1px;
+    -fx-background-color: #e2e2e2;
+}
+
+.tile-revealed-mine {
+    -fx-border-color: #606060;
+    -fx-border-width: 1px;
+    -fx-background-color: #c71d1d;
+}
