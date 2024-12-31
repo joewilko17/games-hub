@@ -1,0 +1,64 @@
+[ {
+  "username" : "Joe",
+  "passwordHash" : "$2a$10$u9lbHIqN3E6mhCcSL.wjdOMdKY8pxmpdGs0/ihIlOaJ0e/PzU./BK",
+  "avatarImageURL" : "images/avatars/3.jpg",
+  "preferences" : {
+    "defaultDifficulty" : "easy",
+    "theme" : "dark",
+    "showHints" : false
+  },
+  "gamesData" : {
+    "minesweeper" : {
+      "highScores" : {
+        "1" : 2287,
+        "2" : 390,
+        "3" : 50,
+        "4" : 390
+      },
+      "playerStats" : {
+        "Levels Completed" : 1,
+        "Mines Swept" : 10
+      }
+    }
+  }
+}, {
+  "username" : "Alice",
+  "passwordHash" : "$2a$10$u9lbHIqN3E6mhCcSL.wjdOMdKY8pxmpdGs0/ihIlOaJ0e/PzU./BK",
+  "avatarImageURL" : "images/avatars/7.jpg",
+  "preferences" : {
+    "defaultDifficulty" : "easy",
+    "theme" : "dark",
+    "showHints" : true
+  },
+  "gamesData" : {
+    "minesweeper" : {
+      "highScores" : {
+        "1" : 10
+      },
+      "playerStats" : {
+        "Levels Completed" : 0,
+        "Mines Swept" : 0
+      }
+    }
+  }
+}, {
+  "username" : "Tom",
+  "passwordHash" : "$2a$10$szuBcD0SISKSE05WZMv/1OKm9.0A//1MFrplPXolAPFZJTudVaTnC",
+  "avatarImageURL" : "images/avatars/1.jpg",
+  "preferences" : {
+    "defaultDifficulty" : "easy",
+    "theme" : "dark",
+    "showHints" : false
+  },
+  "gamesData" : {
+    "minesweeper" : {
+      "highScores" : {
+        "1" : 510
+      },
+      "playerStats" : {
+        "Levels Completed" : 0,
+        "Mines Swept" : 1
+      }
+    }
+  }
+} ]
